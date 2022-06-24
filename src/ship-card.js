@@ -15,6 +15,10 @@ export default class ShipCard {
                     </picture>
                   </div>             
                   <div class="ship-info">
+                    <div class="ship-info__name">
+                      <span class="section-header">NAME:</span>
+                      <span>${this._data.id}</span>
+                    </div>
                     <div class="ship-info__class">
                       <span class="section-header">CLASS:</span>
                       <span>${this._data.class}</span>
