@@ -21,7 +21,7 @@ class ShipForm {
         return `<form class="form-flex">
                   <div class="form-group">
                     <label class="form-label">Ship name</label>
-                    <input required="" type="text" name="id" id="id" class="form-control" placeholder="Ship name">
+                    <input required="" type="text" maxlength="32" name="id" id="id" class="form-control" placeholder="Ship name">
                   </div>
                   <div class="form-group" >
                     <label class="form-label">Image</label>
@@ -53,11 +53,11 @@ class ShipForm {
                   </div>
                   <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea required="" class="form-control" name="description" id="description" placeholder="Ship description"></textarea>
+                    <textarea required="" maxlength="512" class="form-control" name="description" id="description" placeholder="Ship description"></textarea>
                   </div>
                   <div class="form-group">
                     <label class="form-label">Bonuses</label>
-                    <textarea required="" class="form-control" name="bonuses" id="bonuses" placeholder="Ship bonuses"></textarea>
+                    <textarea required="" maxlength="512" class="form-control" name="bonuses" id="bonuses" placeholder="Ship bonuses"></textarea>
                   </div>
                   <div class="buttons-box">
                       <div class="button-box__small">
@@ -134,7 +134,6 @@ class ShipForm {
         };
 
         await this.fetchWrapper(requestOptions);
-
         this.notificationHandler("Data saved");
     }
 
@@ -161,11 +160,10 @@ class ShipForm {
             const url = new URL(basket, BACKEND_URL);
 
             await fetch(url.toString(), requestOptions);
+            this.notificationHandler("Data deleted");
         } catch(error) {
             this.notificationHandler("Network error", error.message);
         }
-
-        this.notificationHandler("Data deleted");
     }
 
     async fetchWrapper(requestOptions) {
@@ -218,16 +216,21 @@ class ShipForm {
         const btnImageUpload = this._element.querySelector(".button-upload-image");
         btnImageUpload.addEventListener(`click`, this.uploadImage);
 
-        this._element.addEventListener('submit', (event) => {
+        this._element.addEventListener('submit', async (event) => {
             const submitter = event.submitter;
-
             event.preventDefault();
 
-            if (submitter.id === 'save') {
-                this.save();
-            } else if (submitter.id === 'delete') {
-                this.delete();
+            if (submitter.id === 'save' || submitter.id === 'delete') {
+                [...this._element.querySelectorAll(".form-buttons")]
+                   .forEach( btn => btn.disabled = true );
+
+                if (submitter.id === 'save') {
+                    await this.save();
+                } else {
+                    await this.delete();
+                }
             }
+            setTimeout(() => document.location.href = "./index.html", 1000);
         });
 
         this._controlElements.id.addEventListener('blur', () => {
@@ -261,7 +264,7 @@ class ShipForm {
         setTimeout(() => {
             this._notificationBox.classList.remove(newClass);
             this._notificationBox.innerHTML = "";
-        }, 3000);
+        }, 1000);
     }
 
     remove() {

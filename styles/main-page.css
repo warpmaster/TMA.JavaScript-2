@@ -42,6 +42,7 @@ body {
 }
 
 [class^="ship-info__"] > span {
+    word-wrap: break-word;
     white-space: pre-line;
 }
 

@@ -97,7 +97,7 @@ export default class MainPage {
 
         localStorage.setItem("currentEveShip", value);
 
-        document.location.href = "../ship-form.html";
+        document.location.href = "./ship-form.html";
     }
 
     remove() {
