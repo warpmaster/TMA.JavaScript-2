@@ -1,0 +1,114 @@
+* {padding: 0; margin: 0; border: 0;}
+*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+a:focus, a:active {outline: none}
+a, a:visited, a:hover {text-decoration: none}
+ul li {list-style: none}
+
+body {
+    font-family: Titillium Web,"sans-serif";
+    background: #F5F5F5;
+}
+
+.form-flex {
+    float: left;
+    background: #9DAFB9;
+    font-size: 20px;
+    margin: 15px 0 30px 30px;
+}
+
+.form-group {
+    padding: 0 15px 15px 15px;
+}
+
+.form-group.input-box {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.form-buttons {
+    display: inline-block;
+    font-size: 16px;
+    color: #EBEFF1;
+    padding: 15px 20px;
+    background: #365567;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
+
+.form-buttons:hover {
+    background: #7D8C94;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.form-label {
+    padding: 5px 0;
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+input {
+    display: block;
+    background: #E1E7EA;
+    color: #365567;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+label {
+    display:block;
+}
+
+textarea {
+    width: 512px;
+    height: 128px;
+    border-radius: 4px;
+    background: #E1E7EA;
+    color: #365567;
+    padding: 10px;
+    cursor: text;
+    font-size: 16px;
+}
+
+select {
+    font-size: 16px;
+    background: #365567;
+    padding: 5px;
+    color: #EBEFF1;
+    border-radius: 4px;
+}
+
+.notification-box {
+    padding: 6px 0;
+    font-size: 18px;
+    text-align: center;
+    height: 32px;
+}
+
+.form-control img {
+    max-width: 30vw;
+    height: auto;
+}
+
+@keyframes blink_green {
+    50% { background: #DAF7A6; }
+}
+
+@keyframes blink_red {
+    50% { background: #F88379; }
+}
+
+.notification-success {
+    animation: blink_green .25s step-end infinite alternate;
+}
+
+.notification-error {
+    animation: blink_red .25s step-end infinite alternate;
+}

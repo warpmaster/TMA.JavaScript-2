@@ -1,0 +1,116 @@
+* {padding: 0; margin: 0; border: 0;}
+*, *:before, *:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+a:focus, a:active {outline: none}
+a, a:visited, a:hover {text-decoration: none}
+ul li {list-style: none}
+
+body {
+    font-family: Titillium Web,"sans-serif";
+    background: #9DAFB9;
+}
+
+.content__header {
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: #EBEFF1;
+    padding: 35px 0;
+    background: #3C5F73;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ship-info {
+    width: 70%;
+    padding: 0 25px;
+}
+
+.image-box {
+    width: 30%;
+}
+
+.section-header {
+    display: block;
+    margin-bottom: 5px;
+}
+
+[class^="ship-info__"] {
+    margin-bottom: 18px;
+}
+
+[class^="ship-info__"] > span {
+    white-space: pre-line;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-box img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s all;
+}
+
+.ship-card {
+    margin: 15px;
+    padding: 15px;
+    background: #365567;
+    display: flex;
+    flex-direction: row;
+    color: #EBEFF1;
+    font-size: 18px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.controls-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 45px 0 10px 15px;
+}
+
+.add-ship-button {
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 20px;
+    background: #365567;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 4px;
+    color: #EBEFF1;
+}
+
+.add-ship-button:hover {
+    background: #7D8C94;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.ship-type {
+    padding: 6px;
+    margin-left: 50px;
+}
+
+.ship-type__label {
+    font-size: 18px;
+}
+
+.ship-type__category {
+    font-size: 18px;
+    background-color: #365567;
+    padding: 5px;
+    color: #EBEFF1;
+    border-radius: 4px;
+}
+
+.ship-type__category:hover {
+    cursor: pointer;
+}
+
+/*.section-data {*/
+/*    white-space: pre-line;*/
+/*}*/
